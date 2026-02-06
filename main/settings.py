@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'book', 
-    'relation_db',    
+    'relation_db',   
+    'myShop',  
     
 ]
 

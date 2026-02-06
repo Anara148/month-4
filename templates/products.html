@@ -1,0 +1,8 @@
+<h1>Все продукты</h1>
+<u1>
+    {% for a in products %}
+        <li>{{ a.name }} - {{  a.price  }} - {{  a.category.name}}</li>
+
+    {% endfor %}
+</u1>
+<a href="/categories/">Все категории</a>
