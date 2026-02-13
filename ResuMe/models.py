@@ -12,8 +12,8 @@ class CustomUser(User):
     city = models.CharField(max_length=100, default='Бишкек', verbose_name='Город')
     birthday = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     education = models.CharField(max_length=200, blank=True, verbose_name='Образование')
-    experience = models.TextField(blank=True, verbose_name='Опыт работы')
-    skills = models.TextField(blank=True, verbose_name='Навыки')
+    experience = models.TextField(verbose_name='Опыт работы')
+    skills = models.TextField(verbose_name='Навыки')
 
     def __str__(self):
         return self.username
