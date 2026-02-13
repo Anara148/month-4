@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('registrations/', views.relation_db)
+    path('registrations/', views.relation_db),
+    path('cap')
+    
 ]

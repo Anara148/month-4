@@ -7,6 +7,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('book.urls')),
     path('', include('myShop.urls')), 
+    path('', include('ResuMe.urls')),
+    path('', include('captcha.urls')),
+
    
     
 ]

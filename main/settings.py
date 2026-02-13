@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'book', 
     'relation_db',   
     'myShop',  
+    'ResuMe',
+    'captcha',
+    
     
 ]
 
