@@ -1,12 +1,38 @@
 <center>
-<a href="/create_book_list/"><button> Добавить</button></a>
+<a href="{% url 'book:sozdat_blog' %}"><button> Добавить</button></a>
 <br><br>
+
+<form action="{% url 'book:iskat_recepty' %}" method="GET">
+    <input type="text" type="search" name="oleg" placeholder="Найти книги">
+    <button type="submit">Найти</button>
+</form>
+
 {% for i in book_list %}
 <img src="{{ i.image.url }}" alt="" width="300" height="400">
 <h1>{{ i.title }}</h1>
-<p> <a href="/book_list/{{ i.id }}/">Подробнее</a> <p>
-<p> <a href="/book_list/{{ i.id }}/delete">Удалить</a> <p>
-<p> <a href="/book_list/{{ i.id }}/update">Редактировать</a> <p>
+<p><a href="{% url 'book:knizhnoe_menu' i.id %}">Подробнее</a><p>
+<p><a href="{% url 'book:kniga_terminator' i.id %}">Удалить</a><p>
+<p><a href="{% url 'book:peresolit_knigu' i.id %}">Редактировать</a><p>
 {% endfor %}
+
+<div class="pagination">
+        <span class="step-links">
+            {% if book_list.has_previous %}
+                <a href="?page=1">&laquo; Первая</a>
+                <a href="?page={{ book_list.previous_page_number }}">Предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ book_list.number }} из {{ book_list.paginator.num_pages }}.
+            </span>
+
+            {% if book_list.has_next %}
+                <a href="?page={{ book_list.next_page_number }}">Следующая</a>
+                <a href="?page={{ book_list.paginator.num_pages }}">Последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+
 
 </center>

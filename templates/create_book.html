@@ -1,6 +1,6 @@
 <center>
     <h1>Добавить книги</h1>
-    <form action="/create_book_list/" method="post" enctype="multipart/form-data">
+    <form action="{% url 'book:sozdat_blog' %}" method="post" enctype="multipart/form-data">
 
          {% csrf_token %}
 

@@ -5,7 +5,7 @@ class BookList(models.Model):
     description = models.TextField(verbose_name='напишите аннотацию книги')
     image = models.ImageField(upload_to='booklist/', verbose_name='загрузите фото')
     created_data_lang = models.PositiveBigIntegerField(verbose_name='укажите год создания книги', blank=True)
-    chapter_count = models.PositiveIntegerField(verbose_name='сколько глва в книге')
+    chapter_count = models.PositiveIntegerField(verbose_name='сколько глав в книге')
     author = models.CharField(max_length=100, verbose_name='автор книги')
     pages = models.PositiveIntegerField(verbose_name='количество страниц')
     language = models.CharField(max_length=50, verbose_name='язык книги')
