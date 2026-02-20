@@ -10,7 +10,12 @@ class BookList(models.Model):
     pages = models.PositiveIntegerField(verbose_name='количество страниц')
     language = models.CharField(max_length=50, verbose_name='язык книги')
     publisher = models.CharField(max_length=100, verbose_name='издательство')
+
+    views = models.PositiveIntegerField(default=0, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    
     
 
     def __str__(self):
